@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+    <style>
+        html {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-sizing: border-box;
+
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        
+        body {
+            margin: 0;
+            background-color: mediumspringgreen;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .app {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .card {
+            background-color: rgb(103, 71, 219);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px black(0,0,0,.2);
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .card-title span {
+            color: aqua;
+        }
+        
+        .card-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 15px 20px;
+            border: 0;
+            border-radius: 20px;
+            background-color: deeppink;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="app">
+        <article class="card">
+            <h1 id="msg" class="card-title">Texto de pruebas</h1>
+            <button id="btn" type="button" class="card-btn">Obtener Nuevo Nombre</button>
+        </article>
+
+    </div>
+    <script>
+        const btnEL =document.getElementById('btn')
+        const msgEL =document.getElementById('msg')
+
+        const nombres = ['Ashley', 'Diana', 'Camilo', 'Andres', 'Alejandro']
+
+        function getRandomName() {
+            const randomIndex = Math.floor (Math.random() * nombres.length)
+            return nombres[randomIndex]
+        }
+
+        btn.addEventListener('click', function () {
+            msgEL.innerHTML = `Hola, soy <span>${getRandomName()}</span>`
+
+        })
+        
+    
+
+    </script>
+</body>
+</html>
